@@ -12,9 +12,39 @@ namespace SystemHR.UserInterface.Forms.Employees
 {
     public partial class EmployeesForm : Form
     {
-        public EmployeesForm()
+        private static EmployeesForm _instance = null;
+
+        public static EmployeesForm Instance
+        {
+            get
+            {
+                if(_instance == null)
+                {
+                    _instance = new EmployeesForm();
+                }
+                return _instance;
+            }
+        }
+
+        public static bool IsNull
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+        private EmployeesForm()
         {
             InitializeComponent();
+        }
+
+        private void EmployeesForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _instance = null;
         }
     }
 }
