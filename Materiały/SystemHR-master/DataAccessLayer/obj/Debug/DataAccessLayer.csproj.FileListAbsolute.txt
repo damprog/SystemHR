@@ -1,0 +1,15 @@
+C:\TFS\SystemHR\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\TFS\SystemHR\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\TFS\SystemHR\DataAccessLayer\obj\Debug\DataAccessLayer.csprojAssemblyReference.cache
+C:\TFS\SystemHR\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\TFS\SystemHR\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\TFS\SystemHR\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\TFS\SystemHR\DataAccessLayer\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\TFS\SystemHR\DataAccessLayer\bin\Debug\System.Security.AccessControl.dll
+C:\TFS\SystemHR\DataAccessLayer\bin\Debug\System.Security.Permissions.dll
+C:\TFS\SystemHR\DataAccessLayer\bin\Debug\System.Security.Principal.Windows.dll
+C:\TFS\SystemHR\DataAccessLayer\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\TFS\SystemHR\DataAccessLayer\bin\Debug\System.Security.AccessControl.xml
+C:\TFS\SystemHR\DataAccessLayer\bin\Debug\System.Security.Permissions.xml
+C:\TFS\SystemHR\DataAccessLayer\bin\Debug\System.Security.Principal.Windows.xml
+C:\TFS\SystemHR\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete

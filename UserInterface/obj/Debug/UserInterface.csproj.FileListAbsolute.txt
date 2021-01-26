@@ -10,3 +10,6 @@ C:\Users\Prezes\Desktop\Programowanie\Visual Studio Projects\C#\SystemHR\SystemH
 C:\Users\Prezes\Desktop\Programowanie\Visual Studio Projects\C#\SystemHR\SystemHR\UserInterface\obj\Debug\UserInterface.csproj.CopyComplete
 C:\Users\Prezes\Desktop\Programowanie\Visual Studio Projects\C#\SystemHR\SystemHR\UserInterface\obj\Debug\SystemHR.exe
 C:\Users\Prezes\Desktop\Programowanie\Visual Studio Projects\C#\SystemHR\SystemHR\UserInterface\obj\Debug\SystemHR.pdb
+C:\Users\Prezes\Desktop\Programowanie\Visual Studio Projects\C#\SystemHR\SystemHR\UserInterface\obj\Debug\SystemHR.UserInterface.Forms.MainForm.resources
+C:\Users\Prezes\Desktop\Programowanie\Visual Studio Projects\C#\SystemHR\SystemHR\UserInterface\obj\Debug\SystemHR.UserInterface.Forms.Contracts.ContractsForm.resources
+C:\Users\Prezes\Desktop\Programowanie\Visual Studio Projects\C#\SystemHR\SystemHR\UserInterface\obj\Debug\SystemHR.UserInterface.Forms.Employees.EmployeesForm.resources
