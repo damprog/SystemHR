@@ -12,9 +12,39 @@ namespace SystemHR.UserInterface.Forms.Contracts
 {
     public partial class ContractsForm : Form
     {
-        public ContractsForm()
+        private static ContractsForm _instance = null;
+
+        public static ContractsForm Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new ContractsForm();
+                }
+                return _instance;
+            }
+        }
+
+        public static bool IsNull
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+        private ContractsForm()
         {
             InitializeComponent();
+        }
+
+        private void ContractsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _instance = null;
         }
     }
 }

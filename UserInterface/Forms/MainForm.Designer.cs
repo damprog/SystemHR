@@ -235,6 +235,7 @@ namespace SystemHR.UserInterface.Forms
             this.ssMain.Name = "ssMain";
             this.ssMain.Padding = new System.Windows.Forms.Padding(1, 0, 12, 0);
             this.ssMain.Size = new System.Drawing.Size(1023, 26);
+            this.ssMain.SizingGrip = false;
             this.ssMain.TabIndex = 1;
             this.ssMain.Text = "statusStrip1";
             // 
@@ -292,6 +293,7 @@ namespace SystemHR.UserInterface.Forms
             this.Controls.Add(this.ssMain);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
