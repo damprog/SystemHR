@@ -3,3 +3,4 @@ C:\Users\Prezes\Desktop\Programowanie\Visual Studio Projects\C#\SystemHR\SystemH
 C:\Users\Prezes\Desktop\Programowanie\Visual Studio Projects\C#\SystemHR\SystemHR\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\Prezes\Desktop\Programowanie\Visual Studio Projects\C#\SystemHR\SystemHR\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\Prezes\Desktop\Programowanie\Visual Studio Projects\C#\SystemHR\SystemHR\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\Prezes\Desktop\Programowanie\Visual Studio Projects\C#\SystemHR\SystemHR\DataAccessLayer\obj\Debug\DataAccessLayer.csprojAssemblyReference.cache
