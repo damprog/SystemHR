@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SystemHR.DataAccessLayer.Model
+namespace SystemHR.DataAccessLayer.Model.Dictionaries
 {
     public class StatusModel : EntityModel
     {
