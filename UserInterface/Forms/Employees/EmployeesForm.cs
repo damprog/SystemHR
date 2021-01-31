@@ -94,10 +94,10 @@ namespace SystemHR.UserInterface.Forms.Employees
 
                 new EmployeeModel()
                 {
-                   Id = 1,
+                   Id = 2,
                    LastName = "Andrzejewski",
-                   FirstName = "Paweł",
-                   Code = 1,
+                   FirstName = "Adam",
+                   Code = 2,
                    Gender = new GenderModel("mężczyzna"),
                    DateBirth = new DateTime(1994,9,1),
                    PESEL = "98346274658",
@@ -114,10 +114,10 @@ namespace SystemHR.UserInterface.Forms.Employees
 
                 new EmployeeModel()
                 {
-                   Id = 1,
+                   Id = 3,
                    LastName = "Andrzejewski",
-                   FirstName = "Paweł",
-                   Code = 1,
+                   FirstName = "Marek",
+                   Code = 3,
                    Gender = new GenderModel("mężczyzna"),
                    DateBirth = new DateTime(1994,9,1),
                    PESEL = "98346274658",
@@ -161,10 +161,47 @@ namespace SystemHR.UserInterface.Forms.Employees
                 }
             };
             frm.ShowDialog();
-
-            #endregion
-
-
         }
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            int employeeId = Convert.ToInt32(dgvEmployees.CurrentRow.Cells["colId"].Value);
+            int selectedRowIndex = dgvEmployees.CurrentRow.Index;
+
+            EmployeeEditForm frm = new EmployeeEditForm(employeeId);
+            frm.ReloadEmployees += (s, ea) =>
+            {
+                EmployeeEventArgs eventArgs = ea as EmployeeEventArgs;
+                if (eventArgs != null)
+                {
+                    EmployeeViewModel employee
+                    = MappingHelper.MapEmployeeModelToEmployeeViewModeln(eventArgs.Employee);
+                    bsEmployees[selectedRowIndex] = employee;
+                }
+            };
+            frm.ShowDialog();
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            int employeeId = Convert.ToInt32(dgvEmployees.CurrentRow.Cells["colId"].Value);
+            int selectedRowIndex = dgvEmployees.CurrentRow.Index;
+
+            //RemoveEmployee(employeeId);
+
+            EmployeeViewModel employee = fakeEmployees.Where(x => x.Id == employeeId).FirstOrDefault();
+            if (employee != null)
+            {
+                bsEmployees.Remove(employee);
+
+                if (dgvEmployees.Rows.Count > 1)
+                {
+                    dgvEmployees.ClearSelection();
+                    dgvEmployees.Rows[dgvEmployees.Rows.Count - 1].Selected = true;
+                }
+            }
+        }
+
+        #endregion
+
     }
 }

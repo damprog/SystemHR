@@ -116,8 +116,6 @@ namespace SystemHR.UserInterface.Forms.Employees
             return true;
         }
 
-       
-
         #endregion
         #region Events
 
@@ -201,8 +199,6 @@ namespace SystemHR.UserInterface.Forms.Employees
             }
 
         }
-
-
 
         protected override void Cancel()
         {

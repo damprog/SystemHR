@@ -16,3 +16,4 @@ C:\Users\Prezes\Desktop\Programowanie\Visual Studio Projects\C#\SystemHR\SystemH
 C:\Users\Prezes\Desktop\Programowanie\Visual Studio Projects\C#\SystemHR\SystemHR\UserInterface\obj\Debug\SystemHR.UserInterface.Forms.Employees.EmployeeAddForm.resources
 C:\Users\Prezes\Desktop\Programowanie\Visual Studio Projects\C#\SystemHR\SystemHR\UserInterface\obj\Debug\SystemHR.UserInterface.Forms.Employees.Base.BaseForm.resources
 C:\Users\Prezes\Desktop\Programowanie\Visual Studio Projects\C#\SystemHR\SystemHR\UserInterface\obj\Debug\SystemHR.UserInterface.Forms.Base.BaseAddEditForm.resources
+C:\Users\Prezes\Desktop\Programowanie\Visual Studio Projects\C#\SystemHR\SystemHR\UserInterface\obj\Debug\SystemHR.UserInterface.Forms.Employees.EmployeeEditForm.resources
