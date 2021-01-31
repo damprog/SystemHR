@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SystemHR.DataAccessLayer.Model;
 using SystemHR.DataAccessLayer.Model.Dictionaries;
+using SystemHR.UserInterface.Classes;
 using SystemHR.UserInterface.Extensions;
 using SystemHR.UserInterface.Forms.Base;
 using SystemHR.UserInterface.Forms.Employees.Base;
@@ -18,12 +19,23 @@ namespace SystemHR.UserInterface.Forms.Employees
 {
     public partial class EmployeeAddForm : BaseAddEditForm
     {
+        #region Fields
+
+        public EventHandler ReloadEmployees;
+
+
+        #endregion
+        #region Constructor
+
         public EmployeeAddForm()
         {
             InitializeComponent();
             InitializeData();
             ValidateControls();
         }
+
+        #endregion
+        #region Private Methods
 
         private void ValidateControls()
         {
@@ -58,51 +70,14 @@ namespace SystemHR.UserInterface.Forms.Employees
             cbGender.Text = string.Empty;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            Save();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Cancel();
-        }
-
-        protected override void Save()
-        {
-            if (ValidateForm())
-            {
-                EmployeeModel employee = new EmployeeModel()
-                {
-                    LastName = txtLastName.Text,
-                    FirstName = txtFirstName.Text,
-                    Gender = new GenderModel(cbGender.Text),
-                    DateBirth = dtpDateBirth.Value,
-                    PESEL = txtPesel.Text,
-                    PhoneNumber = txtPhoneNumber.Text,
-                    EmailAddress = txtEmailAddress.Text,
-                    IdentityCardNumber = txtIdentityCardNumber.Text,
-                    IssueDateIdentityCard = dtpIssueDateIdentityCard.Value,
-                    ExpirationDateIdentityCard = dtpExpirationDateIdentityCard.Value,
-                    PassportNumber = txtPassportNumber.Text,
-                    IssueDatePassport = dtpIssueDatePassport.Value,
-                    ExpirationDatePassport = dtpExpirationDatePassport.Value,
-                    Status = new StatusModel("Wprowadzony")
-                };
-
-                //employee = CreateEmployee(employee);
-
-                Close();
-            }
-            
-        }
+        
 
         private bool ValidateForm()
         {
             StringBuilder sbErrorMessage = new StringBuilder();
 
             string lastNameErrorMessage = epLastName.GetError(txtLastName);
-            if(!string.IsNullOrEmpty(lastNameErrorMessage))
+            if (!string.IsNullOrEmpty(lastNameErrorMessage))
             {
                 sbErrorMessage.Append(lastNameErrorMessage);
             }
@@ -141,10 +116,19 @@ namespace SystemHR.UserInterface.Forms.Employees
             return true;
         }
 
-        protected override void Cancel()
+       
+
+        #endregion
+        #region Events
+
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Anulowano!");
-            Close();
+            Save();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Cancel();
         }
 
         private void dtp_ValueChanged(object sender, EventArgs e)
@@ -174,12 +158,58 @@ namespace SystemHR.UserInterface.Forms.Employees
 
             if (!string.IsNullOrWhiteSpace(pesel) && !ValidatorsHelper.IsValidPESEL(pesel))
             {
-                epPESEL.SetError(txtPesel,"Cyfra kontrolna numeru pesel jest nieprawidłowa.");
+                epPESEL.SetError(txtPesel, "Cyfra kontrolna numeru pesel jest nieprawidłowa.");
             }
             else
             {
                 epPESEL.Clear();
             }
         }
+
+        #endregion
+        #region Override
+
+        protected override void Save()
+        {
+            if (ValidateForm())
+            {
+                EmployeeModel employee = new EmployeeModel()
+                {
+                    LastName = txtLastName.Text,
+                    FirstName = txtFirstName.Text,
+                    Gender = new GenderModel(cbGender.Text),
+                    DateBirth = dtpDateBirth.Value,
+                    PESEL = txtPesel.Text,
+                    PhoneNumber = txtPhoneNumber.Text,
+                    EmailAddress = txtEmailAddress.Text,
+                    IdentityCardNumber = txtIdentityCardNumber.Text,
+                    IssueDateIdentityCard = dtpIssueDateIdentityCard.Value,
+                    ExpirationDateIdentityCard = dtpExpirationDateIdentityCard.Value,
+                    PassportNumber = txtPassportNumber.Text,
+                    IssueDatePassport = dtpIssueDatePassport.Value,
+                    ExpirationDatePassport = dtpExpirationDatePassport.Value,
+                    Status = new StatusModel("Wprowadzony")
+                };
+
+                //employee = CreateEmployee(employee);
+                employee.Id = 4;
+                employee.Code = 4;
+
+                ReloadEmployees?.Invoke(btnSave, new EmployeeEventArgs(employee));
+
+                Close();
+            }
+
+        }
+
+
+
+        protected override void Cancel()
+        {
+            MessageBox.Show("Anulowano!");
+            Close();
+        }
+
+        #endregion
     }
 }

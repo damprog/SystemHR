@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using SystemHR.DataAccessLayer.Model;
 using SystemHR.DataAccessLayer.ViewModel;
 
@@ -29,6 +25,19 @@ namespace SystemHR.UserInterface.Helpers
             }
 
             return employeesViewModel;
+        }
+
+        public static EmployeeViewModel MapEmployeeModelToEmployeeViewModeln(EmployeeModel employeeModel)
+        {
+            EmployeeViewModel employeeViewModel = new EmployeeViewModel();
+            employeeViewModel.Id = employeeModel.Id;
+            employeeViewModel.LastName = employeeModel.LastName;
+            employeeViewModel.FirstName = employeeModel.FirstName;
+            employeeViewModel.Code = employeeModel.Code.ToString();
+            employeeViewModel.Position = string.Empty;
+            employeeViewModel.Status = employeeModel.Status.ToString();
+
+            return employeeViewModel;
         }
     }
 }
