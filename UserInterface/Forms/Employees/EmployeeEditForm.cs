@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SystemHR.DataAccessLayer;
 using SystemHR.DataAccessLayer.Model;
 using SystemHR.DataAccessLayer.Model.Dictionaries;
 using SystemHR.UserInterface.Classes;
@@ -30,7 +31,7 @@ namespace SystemHR.UserInterface.Forms.Employees
         {
             InitializeComponent();
             InitializeData();
-            employee = GetFakeEmployee(employeeId);
+            employee = GlobalConfig.Connection.GetEmployee(employeeId);
             PrepareEmploeeData(employee);
             ValidateControls();
         }

@@ -7,7 +7,7 @@ namespace SystemHR.UserInterface.Helpers
     public class MappingHelper
     {
         public static IList<EmployeeViewModel> MapEmployeeModelToEmployeeViewModel
-            (IList<EmployeeModel> employeesModel)
+            (IEnumerable<EmployeeModel> employeesModel)
         {
             IList<EmployeeViewModel> employeesViewModel = new List<EmployeeViewModel>();
 

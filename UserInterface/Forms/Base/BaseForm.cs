@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SystemHR.DataAccessLayer;
 
 namespace SystemHR.UserInterface.Forms.Employees.Base
 {
@@ -14,7 +15,7 @@ namespace SystemHR.UserInterface.Forms.Employees.Base
     {
         public BaseForm()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
     }
 }
